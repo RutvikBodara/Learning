@@ -1,0 +1,44 @@
+Title : Daily Report
+Date:05-07-2024 
+
+Referred YT Playlist : "https://youtube.com/playlist?list=PLRAV69dS1uWRPSfKzwZsIm-Axxq-LxqhW&si=yCMQo6PaTc_P2vdA"
+Source Code : 
+
+Learning part :- 
+
+*)What is TypeScript?
+  Ans. Super subset of JS,
+       Development tool which compile in JS
+
+*)Why TypeScript?
+  Ans. 1) Type safety
+       2) Static checking of written code
+
+*)Typescript playground
+
+*)Bug :- PowerShell bug “execution of scripts is disabled on this system.” 
+         Ref.--> https://stackoverflow.com/questions/54776324/powershell-bug-execution-of-scripts-is-disabled-on-this-system
+
+*)Data Types, Enum & Type Aliases ETC..  in TS  
+*) Interface , Access Modifiers , class in TS
+         Ref. -->https://www.typescriptlang.org/docs/handbook/2/basic-types.html
+              -->https://www.typescriptlang.org/docs/handbook/2/everyday-types.html
+
+*) Good and bad practice with datatype in TS
+
+*)All about Generics in TS 
+         Ref.-->https://www.typescriptlang.org/docs/handbook/2/generics.html
+
+*)Type Narrowing in TS
+         Ref.-->https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+
+*)Instance of and Type Predicating
+         Ref.-->https://www.typescriptlang.org/docs/handbook/2/narrowing.html#instanceof-narrowing
+         Ref.-->typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates
+
+*)Discriminated Union and Exhaustiveness checking with never
+         Ref.-->https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions
+         Ref.-->https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-never-type
+         Ref.-->https://www.typescriptlang.org/docs/handbook/2/narrowing.html#exhaustiveness-checking
+
+
