@@ -408,3 +408,38 @@ console.log(arr1)
 type DemoFunc = ()=>boolean
 
 const demoAssign :DemoFunc = () =>{return true}
+
+//index signature
+interface StringArray {
+    [index: number]: number;
+}
+  const myArray: StringArray=[12,31,31,2]
+  const secondItem = myArray[1];
+  console.log(secondItem)
+
+interface DemoIndex{
+    // [index:number]:number,
+    length:string
+    name:string
+}
+const demoIndexTest:DemoIndex = {length:"5",name:'Darji'};
+console.log(demoIndexTest.name[3])
+
+//intersectin
+type NewType = DemoIndex &StringArray
+
+//radonly array
+function CheckReadOnly(value :ReadonlyArray<number[]>):void{
+    value.forEach(Details => {
+        // value.push([1,2,3])
+        console.log(Details)
+    });
+}
+CheckReadOnly([[1,2,3,4,5,6,7,7],[1,3,4,34]])
+
+//tuple with specific position
+function DemoTuple(value:readonly [string,number,string]){
+    // value[1] ="adsa"
+    console.log("works")
+}
+DemoTuple(["a",2,"d"])
