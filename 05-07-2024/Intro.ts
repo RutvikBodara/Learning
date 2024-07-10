@@ -443,3 +443,68 @@ function DemoTuple(value:readonly [string,number,string]){
     console.log("works")
 }
 DemoTuple(["a",2,"d"])
+
+
+//validations
+let lettersRegexp = /^[A-Za-z]+$/;
+let numberRegexp = /^[0-9]+$/;
+class LettersOnlyValidator{
+    //index signature for the class
+    [s:string]:boolean | ((s:string) =>Boolean)
+
+    isAcceptable(s: string) {
+      return lettersRegexp.test(s) as boolean;
+    }
+}
+
+const testValid = new LettersOnlyValidator;
+console.log(testValid.isAcceptable("abd"));
+
+//static blocks
+class CheckStatic{
+    static count =1;
+    
+    //having his own scope
+    static{
+        CheckStatic.count+=1;
+        console.log(this.count);
+    }
+}
+class chek2 extends CheckStatic{
+    count=CheckStatic.count;
+}
+
+let testCount =new chek2();
+console.log(testCount);
+
+//generic class
+
+class TestCount<Type>{
+    product(value:Type):Type{
+       return value;   
+    }
+}
+
+let GenericTest = new TestCount<string>()
+console.log(GenericTest.product("hello"))
+
+///classs expressions 
+//without name class
+const demoexpression  =class<type>{
+constructor(){
+    console.log(" i am in the room")
+}
+} 
+const data = new demoexpression();
+///relation between 2 class
+class test1{
+    x=1;
+    y=1;
+}
+class test2{
+    x=1;
+    y=1;
+    z=1;
+}
+let NewClient :test1 =new test2()
+export{}
