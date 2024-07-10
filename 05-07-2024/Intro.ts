@@ -300,3 +300,111 @@ const arr:Array<Number> =[1,2,3]
             return _TempData
     }
  }
+
+//10-07-2023
+ //mappped types
+
+type demoMapType = {
+    x:number,
+    y:number
+}
+//intenal working of readonly
+export type Readonly<T> = {
+    [key in keyof T] : T[key]
+}
+
+const demoMapValue:Readonly<demoMapType> ={x:1,y:2}
+//can not change as this value mapped
+// demoMapValue.x =1;
+
+//literal values
+type World = 'string'
+type Greeting = `hello ${World}`;
+
+//more on the function
+
+function DemoFuntion1(Fn : (value:string) => void){
+    Fn("hey there i am typing type script")
+}
+function DemoFuntion2(value:string){
+    console.log(value)
+}
+DemoFuntion1(DemoFuntion2)
+
+//call signature
+//for the variable
+//for the interface
+interface DemoCall {
+    (x:number , y:number)
+}
+
+const demoCall :DemoCall =  (x,y) => x-y
+
+//construct signatures
+
+interface DemoCall2{
+    (s:string):string;
+    (y:string):string;
+    new (y:string):string
+}
+
+//constraint
+
+function DemoConstraint<Type extends { length: number }>(a: Type, b: Type) {
+    if (a.length >= b.length) {
+      return a;
+    } else {
+      return b;
+    }
+  }
+   
+  // longerArray is of type 'number[]'
+  const DemoConstraint1 = DemoConstraint([1, 2], [1, 2, 3]);
+  const DemoConstraint2 = DemoConstraint("John", "Dow");
+ console.log(DemoConstraint1 +"  " +DemoConstraint2)
+
+ //function optional parameter in the callbacks 
+
+ function DemoCallBack<T extends number>(arg1 : T[] ,callback: (x:number,y?:number) =>void ){
+    let count :number =1;
+    if(arg1 instanceof Number){
+        arg1.forEach(element => {
+            callback(element,count) 
+            count++;
+        });
+    }
+}
+//  function callback<Type>(x:Type , y? :Type){ 
+//     console.log("sum of this number are " + x+y);
+//  }
+DemoCallBack([1,2,3,4], (a) => console.log(a))
+
+DemoCallBack([1,2,3,4], (a,i) => console.log(a+" "+i))
+
+//overload function
+
+function DemoOverLoad(y:number[]):number{
+    return 2;
+}
+function DemoOverload(x:any[]):number;
+function DemoOverload(asa:any){return 1}
+
+
+//never -> never return value always throw error using this parameter also shown in the narrowing
+
+//rest perameters
+
+function DemoRestPerameter(...m:number[]){
+m.map((n)=>console.log(n))
+}
+DemoRestPerameter(1,2,3,4,5)
+//rest argument 
+const arr1 = [1,3,4]
+const arr2 = [5,6,7]
+arr1.push(...arr2)
+console.log(arr1)
+
+//assign function to other variable
+type DemoFunc = ()=>boolean
+
+const demoAssign :DemoFunc = () =>{return true}
